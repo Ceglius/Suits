@@ -1,0 +1,16 @@
+/*
+  ==== Base ====
+*/
+
+html {
+  font-size: 100%;
+}
+
+body {
+  font-family: var(--ff-saira);
+  font-size: 20px;
+
+  &.locked {
+    overflow: hidden;
+  }
+}
