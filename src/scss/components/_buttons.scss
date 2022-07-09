@@ -3,3 +3,24 @@
   ==== Buttons ====
 */
 
+.btn-cta {
+  color: var(--dark-blue-co);
+  font-weight: 600;
+  padding: 17px 30px;
+  border: 1px solid var(--black-co);
+  transition: all 0.3s;
+
+@media ($max: $breakpoint768){
+  padding: 8px 15px;
+}
+  @media (any-hover: hover) {
+      &:hover {
+    color: var(--red-co);
+    border: 1px solid var(--red-co);
+  }
+
+  }
+
+
+
+}

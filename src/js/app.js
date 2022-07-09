@@ -2,11 +2,10 @@ import * as flsFunctions from "./modules/functions.js";
 
 flsFunctions.isWebp();
 
+// core version + navigation, pagination modules:
+import Swiper, { Navigation, Pagination } from "swiper";
 
-  // core version + navigation, pagination modules:
-  import Swiper, { Navigation, Pagination } from 'swiper';
-
-// Gasllery products swiper 
+// Gasllery products swiper
 
 const swiper = new Swiper(".mySwiper", {
   slidesPerView: 3,
@@ -25,44 +24,31 @@ const swiper = new Swiper(".mySwiper", {
 });
 
 // Burger functionality
+const burger = document.querySelector(".burger");
+const menu = document.querySelector(".menu");
+const body = document.querySelector("body");
+const overlay = document.querySelector(".overlay");
 
-
-function burgerMenu() {
-  const burger = document.querySelector(".burger");
-  const menu = document.querySelector(".menu");
-  const body = document.querySelector("body");
-  burger.addEventListener("click", () => {
-    if (!menu.classList.contains("active")) {
-      menu.classList.add("active");
-      burger.classList.add("active-burger");
-      body.classList.add("locked");
-    } else {
-      menu.classList.remove("active");
-      burger.classList.remove("active-burger");
-      body.classList.remove("locked");
-    }
-  });
+burger.addEventListener("click", () => {
+  if (!menu.classList.contains("active")) {
+    menu.classList.add("active");
+    burger.classList.add("active-burger");
+    body.classList.add("locked");
+    overlay.classList.add("active");
+  } else {
+    menu.classList.remove("active");
+    burger.classList.remove("active-burger");
+    body.classList.remove("locked");
+     overlay.classList.remove("active");
+  }
+});
 
   window.addEventListener("resize", () => {
     if (window.innerWidth > 991.98) {
       menu.classList.remove("active");
       burger.classList.remove("active-burger");
       body.classList.remove("locked");
+      overlay.classList.remove("active");
     }
   });
-}
-burgerMenu();
-
-function fixedNav() {
-  const nav = document.querySelector("nav");
-
-  const breakpoint = 1;
-  if (window.scrollY >= breakpoint) {
-    nav.classList.add("fixed__nav");
-  } else {
-    nav.classList.remove("fixed__nav");
-  }
-}
-window.addEventListener("scroll", fixedNav);
-
 

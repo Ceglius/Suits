@@ -7,8 +7,10 @@ html {
 }
 
 body {
-  font-family: var(--ff-saira);
-  font-size: 20px;
+  font-family: var(--ff-Lato);
+  font-size: var(--fs-body);
+  color: var(--dar-blue-co);
+  font-weight: 400;
 
   &.locked {
     overflow: hidden;

@@ -1,10 +1,26 @@
 @use "../abstract/vars" as *;
+@use "../abstract/mixins" as *;
 /*
   ==== Logo ====
 */
 
 .logo {
+  position: relative;
+  z-index: 300;
   a {
-    color: white;
+    font-family: var(--ff-Playfair);
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    color: var(--dark-blue-co);
+    transition: all .3s;
+
+    @media ($max: $breakpoint768){
+      
+       font-size: 18px;
+    }
+    &:hover {
+      color: var(--red-co);
+    }
   }
 }

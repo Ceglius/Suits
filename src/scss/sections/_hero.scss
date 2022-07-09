@@ -1,0 +1,106 @@
+@use "../abstract/vars" as *;
+@use "../abstract/mixins" as *;
+/*
+   ==== Header ====
+*/
+
+.hero {
+  padding-top: 60px;
+  &__wrapper {
+    position: relative;
+    z-index: 50;
+  }
+
+  &__text {
+    text-align: center;
+    position: relative;
+    z-index: 1000;
+  }
+
+  &__title {
+    font-family: var(--ff-Playfair);
+    font-style: normal;
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 100%;
+
+    @media ($max: $breakpoint992) {
+      font-size: 44px;
+    }
+    @media ($max: $breakpoint768) {
+      font-size: 34px;
+    }
+  }
+
+  &__sub-text {
+    max-width: 515px;
+    margin: 30px auto;
+    font-size: 14px;
+    line-height: 130%;
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 35px;
+    & > .play {
+      width: 50px;
+      height: 50px;
+      background-color: white;
+      & > i {
+        font-size: 32px;
+        transition: all 0.3s;
+        @media (any-hover: hover) {
+          &:hover {
+            color: red;
+          }
+        }
+      }
+    }
+  }
+
+  &__img-box {
+    > img {
+      &:nth-child(1) {
+        display: none;
+        @media ($min: $breakpoint768) {
+          display: block;
+          position: absolute;
+          z-index: 1;
+          top: 10%;
+          left: -50px;
+          width: 25%;
+        }
+      }
+
+      &:nth-child(2) {
+        display: none;
+
+        @media ($min: $breakpoint768) {
+          display: block;
+          position: absolute;
+          top: 20%;
+          right: -50px;
+          width: 15%;
+          z-index: 1;
+        }
+
+        @media ($max: 1495px) {
+          right: 0;
+        }
+      }
+      &:nth-child(3) {
+        display: none;
+        @media ($min: $breakpoint768) {
+          display: block;
+          position: absolute;
+          top: 60%;
+          right: 15%;
+          width: 10%;
+          z-index: 1;
+        }
+      }
+    }
+  }
+}
