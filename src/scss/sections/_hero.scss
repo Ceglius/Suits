@@ -1,14 +1,19 @@
 @use "../abstract/vars" as *;
 @use "../abstract/mixins" as *;
 /*
-   ==== Header ====
+   ==== Hero ====
 */
 
 .hero {
-  padding-top: 60px;
+  padding: 3.75rem 0;
+
   &__wrapper {
     position: relative;
     z-index: 50;
+    margin-bottom: 3.125rem;
+    @media ($max: $breakpoint768) {
+    
+    }
   }
 
   &__text {
@@ -21,7 +26,7 @@
     font-family: var(--ff-Playfair);
     font-style: normal;
     font-weight: 700;
-    font-size: 64px;
+    font-size: 4rem;
     line-height: 100%;
 
     @media ($max: $breakpoint992) {
@@ -33,9 +38,9 @@
   }
 
   &__sub-text {
-    max-width: 515px;
-    margin: 30px auto;
-    font-size: 14px;
+    max-width: 32.1875rem;
+    margin: 1.875rem auto;
+    font-size: 0.875rem;
     line-height: 130%;
   }
 
@@ -43,13 +48,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 35px;
+    gap: 2.1875rem;
     & > .play {
-      width: 50px;
-      height: 50px;
+      width: 3.125rem;
+      height: 3.125rem;
       background-color: white;
       & > i {
-        font-size: 32px;
+        font-size: 2rem;
         transition: all 0.3s;
         @media (any-hover: hover) {
           &:hover {
@@ -69,7 +74,7 @@
           position: absolute;
           z-index: 1;
           top: 10%;
-          left: -50px;
+          left: -3.125rem;
           width: 25%;
         }
       }
@@ -103,4 +108,115 @@
       }
     }
   }
+  &__slider-block {
+    position: relative;
+  }
+}
+
+.slider__slide.swiper-slide {
+  position: relative;
+  width: 14.375rem;
+  height: 20.625rem;
+  @media ($min: $breakpoint480) {
+  }
+
+  @media ($min: $breakpoint768) {
+    width: 15.625rem;
+    height: 21.875rem;
+  }
+
+  @media ($min: $breakpoint992) {
+    width: 23rem;
+    height: 34rem;
+  }
+
+  img {
+    object-fit: cover;
+    object-position: center;
+    height: 100%;
+  }
+}
+
+.slide__box {
+  position: absolute;
+  inset: 0;
+}
+
+.slide__info {
+  position: absolute;
+  z-index: 30;
+  padding: 0.75rem 0.5rem;
+  background-color: rgba(255, 255, 255, 0.342);
+  min-width: 6.5625rem;
+  min-height: 3.375rem;
+}
+
+.slide__name {
+  font-weight: 500;
+  font-size: 0.875rem;
+  color: white;
+  text-shadow: 0px 4px 9px rgba(31, 39, 83, 0.1);
+  letter-spacing: 0.02em;
+  margin-bottom: 0.5rem;
+}
+
+.slide__price {
+  font-weight: 500;
+  font-size: 0.75rem;
+  text-shadow: 0px 4px 9px rgba(31, 39, 83, 0.1);
+  color: white;
+  letter-spacing: 0.02em;
+}
+.jacket {
+  top: 15%;
+  left: 10%;
+
+  &::after {
+    content: "";
+    border-radius: 50%;
+    border: 0.125rem solid white;
+    position: absolute;
+    width: 1.0625rem;
+    height: 1.0625rem;
+    right: -0.5rem;
+    background: #f9f9f9a9;
+  }
+}
+
+.hero-btn-next.swiper-button-next,
+.hero-btn-prev.swiper-button-prev {
+  display: none;
+  border: 1px solid;
+  width: 3.125rem;
+  height: 3.125rem;
+  color: black;
+  background-color: white;
+  border-radius: 50%;
+  z-index: 200;
+
+  @media ($min: $breakpoint768) {
+    display: flex;
+  }
+  &::after {
+    font-size: 1.25rem;
+  }
+}
+
+.hero-btn-next.swiper-button-next {
+  right: -1.5625rem;
+}
+
+.hero-btn-prev.swiper-button-prev {
+  left: -1.5625rem;
+}
+
+.slider__slide.swiper-slide-active {
+}
+.slider__slide.swiper-slide-prev {
+}
+
+.slider__slide.swiper-slide-next {
+}
+
+.slider__wrapper.swiper-wrapper {
 }

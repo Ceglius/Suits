@@ -34,8 +34,13 @@
   flex: 2;
   display: flex;
   justify-content: center;
-  gap: 3.125rem;
 
+  column-gap: 3.125rem;
+  row-gap: 1rem;
+
+  @media ($min: $breakpoint992) {
+    flex-wrap: wrap;
+  }
   @media ($min: 1240px) {
     justify-content: flex-end;
     margin-right: 6.9375rem;
@@ -145,9 +150,6 @@
     margin-left: auto;
   }
 
-  @media ($max: $breakpoint768) {
-    margin-left: 0;
-  }
   &__cart {
   }
 
@@ -165,6 +167,17 @@
   }
 
   &__sign-up {
+    @media ($max: $breakpoint768) {
+      left: -100%;
+      position: fixed;
+      z-index: 300;
+      padding-left: 20px;
+      transition: left 0.3s ease-in;
+
+      &.active {
+        left: 0;
+      }
+    }
   }
 }
 .cart {
