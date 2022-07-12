@@ -1,5 +1,3 @@
-
-
 import * as flsFunctions from "./modules/functions.js";
 
 flsFunctions.isWebp();
@@ -33,11 +31,12 @@ const hero__slider = new Swiper(".hero__slider", {
   },
 });
 
-
 const promo = new Swiper(".promo__slider", {
   loop: true,
   initialSlide: 2,
+  grabCursor: true,
   centeredSlides: false,
+  spaceBetween: 20,
   pagination: {
     el: ".promo-pagination",
   },
@@ -63,7 +62,6 @@ const promo = new Swiper(".promo__slider", {
     // when window width is >= 480px
     480: {
       slidesPerView: 2.2,
-      spaceBetween: 20,
     },
     768: {
       slidesPerView: 3,
@@ -83,7 +81,7 @@ const trending = new Swiper(".trending__slider", {
   loop: true,
   spaceBetween: 20,
   initialSlide: 2,
-
+  grabCursor: true,
   pagination: {
     el: ".trending-pagination",
   },
@@ -119,8 +117,6 @@ const trending = new Swiper(".trending__slider", {
     },
   },
 });
-
-
 
 // Burger functionality
 const burger = document.querySelector(".burger");
@@ -161,8 +157,9 @@ window.addEventListener("resize", () => {
     signUp.style.top = menuItemHeight + "px";
   }
 });
-
-// Centr menu for more items 
+const gridLink = document.querySelectorAll(".grid__item-link > a");
+const gridItem = document.querySelectorAll(".grid__item-link");
+// Centr menu for more items
 window.addEventListener("DOMContentLoaded", () => {
   if (window.innerWidth < 768) {
     signUp.style.top = menuItemHeight + "px";
@@ -178,3 +175,35 @@ window.addEventListener("DOMContentLoaded", () => {
     }
   }
 });
+
+//  Check if is ist tablet mobile or desktop
+const deviceType = () => {
+  const ua = navigator.userAgent;
+
+  if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(ua)) {
+    gridLink.forEach((element) => {
+      element.style.visibility = "visible";
+      element.style.opacity = 1;
+    });
+    gridItem.forEach((element) => {
+      element.style.background =
+        "linear-gradient(0deg, rgba(0, 0, 0, 0.33),rgba(0, 0, 0, 0.33))";
+    });
+  } else if (
+    /Mobile|Android|iP(hone|od)|IEMobile|BlackBerry|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/.test(
+      ua
+    )
+  ) {
+    gridItem.forEach((element) => {
+      element.style.background =
+        "linear-gradient(0deg, rgba(0, 0, 0, 0.33),rgba(0, 0, 0, 0.33))";
+    });
+    gridLink.forEach((element) => {
+      element.style.visibility = "visible";
+      element.style.opacity = 1;
+    });
+  }
+  return console.log("desktop");
+};
+
+deviceType();
