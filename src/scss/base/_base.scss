@@ -16,3 +16,22 @@ body {
     overflow: hidden;
   }
 }
+
+section {
+  padding-bottom: 116px;
+}
+
+.base.swiper-pagination {
+  position: static;
+  width: fit-content;
+}
+
+.swiper-pagination-bullet {
+  background-color: transparent;
+  border: 1px solid;
+  opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #000;
+}

@@ -1,2 +1,23 @@
 @use "../abstract/vars" as *;
 
+.section-heading {
+text-align: center;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 2rem;
+  line-height: 100%;
+  color: var(--black-co);
+  letter-spacing: 0.02em;
+}
+
+.paragraph {
+  max-width: 34.8125rem;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 130%;
+  text-align: center;
+  letter-spacing: 0.02em;
+  opacity: 0.8;
+  margin: 1.875rem auto;
+}

@@ -5,14 +5,13 @@
 */
 
 .hero {
-  padding: 3.75rem 0;
+  padding: 60px 0 120px 0;
 
   &__wrapper {
     position: relative;
     z-index: 50;
     margin-bottom: 3.125rem;
     @media ($max: $breakpoint768) {
-    
     }
   }
 
@@ -210,13 +209,4 @@
   left: -1.5625rem;
 }
 
-.slider__slide.swiper-slide-active {
-}
-.slider__slide.swiper-slide-prev {
-}
 
-.slider__slide.swiper-slide-next {
-}
-
-.slider__wrapper.swiper-wrapper {
-}

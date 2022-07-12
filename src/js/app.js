@@ -1,8 +1,10 @@
+
+
 import * as flsFunctions from "./modules/functions.js";
 
 flsFunctions.isWebp();
 
-var swiper = new Swiper(".hero__slider", {
+const hero__slider = new Swiper(".hero__slider", {
   effect: "coverflow",
   grabCursor: true,
   centeredSlides: true,
@@ -15,8 +17,8 @@ var swiper = new Swiper(".hero__slider", {
     modifier: 2,
   },
   navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
+    nextEl: ".hero-btn-next",
+    prevEl: ".hero-btn-prev",
   },
 
   breakpoints: {
@@ -30,6 +32,95 @@ var swiper = new Swiper(".hero__slider", {
     },
   },
 });
+
+
+const promo = new Swiper(".promo__slider", {
+  loop: true,
+  initialSlide: 2,
+  centeredSlides: false,
+  pagination: {
+    el: ".promo-pagination",
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: ".promo-next",
+    prevEl: ".promo-prev",
+  },
+
+  // Responsive breakpoints
+  breakpoints: {
+    280: {
+      slidesPerView: 1.2,
+      spaceBetween: 5,
+    },
+
+    // when window width is >= 320px
+    320: {
+      slidesPerView: 1.5,
+      spaceBetween: 10,
+    },
+    // when window width is >= 480px
+    480: {
+      slidesPerView: 2.2,
+      spaceBetween: 20,
+    },
+    768: {
+      slidesPerView: 3,
+      centeredSlides: true,
+    },
+
+    992: {
+      slidesPerView: 4.2,
+    },
+    1050: {
+      slidesPerView: 5,
+    },
+  },
+});
+
+const trending = new Swiper(".trending__slider", {
+  loop: true,
+  spaceBetween: 20,
+  initialSlide: 2,
+
+  pagination: {
+    el: ".trending-pagination",
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: ".trending-prev",
+    prevEl: ".trending-next",
+  },
+
+  // Responsive breakpoints
+  breakpoints: {
+    280: {
+      slidesPerView: 1,
+    },
+
+    // when window width is >= 480px
+    430: {
+      slidesPerView: 1.5,
+    },
+    584: {
+      slidesPerView: 1.8,
+    },
+    726: {
+      slidesPerView: 2,
+    },
+
+    992: {
+      slidesPerView: 2.5,
+    },
+    1050: {
+      slidesPerView: 3,
+    },
+  },
+});
+
+
 
 // Burger functionality
 const burger = document.querySelector(".burger");

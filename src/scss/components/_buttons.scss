@@ -11,17 +11,41 @@
   transition: all 0.3s;
   background-color: white;
 
-@media ($max: $breakpoint768){
-  padding: 8px 15px;
-}
+  @media ($max: $breakpoint768) {
+    padding: 8px 15px;
+  }
   @media (any-hover: hover) {
-      &:hover {
-    color: var(--red-co);
-    border: 1px solid var(--red-co);
+    &:hover {
+      color: var(--red-co);
+      border: 1px solid var(--red-co);
+    }
   }
+}
 
+
+.btn-next,
+.btn-prev {
+  position: static;
+  border: 1px solid;
+  width: 1.5rem;
+  height: 1.5rem;
+  color: black;
+  background-color: white;
+  z-index: 200;
+  margin: 0;
+
+  @media ($min: $breakpoint768) {
+    display: flex;
   }
+  &::after {
+    font-size: 0.9375rem;
+  }
+}
 
+.btn-next {
+ 
+}
 
-
+.btn-prev {
+  
 }
