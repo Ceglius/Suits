@@ -88,8 +88,8 @@ const trending = new Swiper(".trending__slider", {
 
   // Navigation arrows
   navigation: {
-    nextEl: ".trending-prev",
-    prevEl: ".trending-next",
+    nextEl: ".trending-next",
+    prevEl: ".trending-prev",
   },
 
   // Responsive breakpoints
@@ -176,10 +176,12 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-//  Check if is ist tablet mobile or desktop
-const deviceType = () => {
-  const ua = navigator.userAgent;
 
+
+//  Check if is ist tablet mobile or desktop
+
+window.addEventListener("DOMContentLoaded", () => {
+ const ua = navigator.userAgent;
   if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(ua)) {
     gridLink.forEach((element) => {
       element.style.visibility = "visible";
@@ -203,7 +205,8 @@ const deviceType = () => {
       element.style.opacity = 1;
     });
   }
-  return console.log("desktop");
-};
+  return;
+})
 
-deviceType();
+
+

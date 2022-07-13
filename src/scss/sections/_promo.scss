@@ -34,11 +34,11 @@
   }
 
   &__slide.swiper-slide {
-    height: 200px;
+    height: 12.5rem;
     position: relative;
 
     @media ($min: $breakpoint480) {
-      height: 232px;
+      height: 14.5rem;
     }
     img {
       object-fit: cover;
@@ -66,10 +66,10 @@
   &__item-name,
   &__item-price {
     font-style: normal;
-    font-size: 20px;
+    font-size: 1.25rem;
 
     @media ($min: $breakpoint480) {
-      font-size: 24px;
+      font-size: 1.5rem;
     }
   }
 
@@ -85,15 +85,15 @@
     font-weight: 500;
   }
   &__item-name {
-    margin-bottom: 8px;
+    margin-bottom: 0.5rem;
   }
 
   &__item-price {
-    margin-right: 8px;
+    margin-right: 0.5rem;
   }
 
   &__item-price-was {
-    font-size: 16px;
+    font-size: 1rem;
     position: relative;
     &::after {
       content: "";
@@ -117,7 +117,7 @@
   }
 
   &__all {
-    margin-top: 50px;
+    margin-top: 3.125rem;
     text-align: center;
   }
 }

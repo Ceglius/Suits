@@ -65,7 +65,7 @@
   }
 
   &__img-box {
-    > img {
+     picture {
       &:nth-child(1) {
         display: none;
         @media ($min: $breakpoint768) {

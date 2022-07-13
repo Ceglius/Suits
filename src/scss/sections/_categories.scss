@@ -26,30 +26,30 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: 285px;
-  gap: 25px;
+  grid-auto-rows: 17.8125rem;
+  gap: 1.5625rem;
 
   @media ($max: $breakpoint992) {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    grid-auto-rows: 250px;
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(12.5rem, 1fr));
+    grid-auto-rows: 15.625rem;
+    gap: 1.25rem;
   }
 
   @media ($max: $breakpoint768) {
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    grid-auto-rows: 250px;
-    gap: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(11.25rem, 1fr));
+    grid-auto-rows: 15.625rem;
+    gap: 0.9375rem;
   }
   @media ($max: $breakpoint480) {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    grid-auto-rows: 190px;
-    gap: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(9.375rem, 1fr));
+    grid-auto-rows: 11.875rem;
+    gap: 0.9375rem;
   }
 
   @media ($max: $breakpoint375) {
     grid-template-columns: 1fr;
-    grid-auto-rows: 220px;
-    gap: 15px;
+    grid-auto-rows: 13.75rem;
+    gap: 0.9375rem;
   }
 
   &__item {
@@ -83,14 +83,14 @@
       color: white;
       font-style: normal;
       font-weight: 600;
-      font-size: 48px;
+      font-size: 3rem;
       line-height: 100%;
-      padding: 20px 80px;
+      padding: 1.25rem 5rem;
       visibility: visible;
       opacity: 1;
 
       @media ($max: $breakpoint480) {
-        padding: 10px 30px;
+        padding: 0.625rem 1.875rem;
       }
     }
 
@@ -110,7 +110,7 @@
     justify-content: center;
     align-items: center;
     transition: all 0.3s ease-in;
-    padding: 0 10px;
+    padding: 0 0.625rem;
 
     @media (any-hover: hover) {
       &:hover {
@@ -132,16 +132,16 @@
       text-align: center;
       font-style: normal;
       font-weight: 500;
-      font-size: 24px;
+      font-size: 1.5rem;
       line-height: 100%;
       border: 1px solid white;
-      padding: 10px 40px;
+      padding: 0.625rem 2.5rem;
       visibility: hidden;
       opacity: 0;
       transition: all 0.3s ease;
 
       @media ($max: $breakpoint768) {
-        padding: 5px 20px;
+        padding: 0.3125rem 1.25rem;
       }
 
       @media (any-hover: hover) {

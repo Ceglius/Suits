@@ -1,0 +1,23 @@
+@use "../abstract/vars" as *;
+@use "../abstract/mixins" as *;
+/*
+   ==== Brands ====
+*/
+
+.brands {
+  padding-bottom: 4.375rem;
+  @media ($min: $breakpoint768) {
+    padding-bottom: 7.25rem;
+  }
+  &__list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    column-gap: 4.375rem;
+    row-gap: 1.875rem;
+  }
+
+  &__item {
+  }
+}
