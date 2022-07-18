@@ -14,10 +14,25 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    column-gap: 4.375rem;
-    row-gap: 1.875rem;
+    column-gap: 3rem;
+    row-gap: 1.3rem;
+
+    @media ($min: $breakpoint768) {
+      column-gap: 4.375rem;
+      row-gap: 1.875rem;
+    }
   }
 
   &__item {
+    img {
+      width: 7.5rem;
+
+      @media ($min: $breakpoint768) {
+        width: 11.25rem;
+      }
+      @media ($min: $breakpoint992) {
+        width: 100%;
+      }
+    }
   }
 }

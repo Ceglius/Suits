@@ -86,19 +86,16 @@ const trending = new Swiper(".trending__slider", {
     el: ".trending-pagination",
   },
 
-  // Navigation arrows
   navigation: {
     nextEl: ".trending-next",
     prevEl: ".trending-prev",
   },
 
-  // Responsive breakpoints
   breakpoints: {
     280: {
       slidesPerView: 1,
     },
 
-    // when window width is >= 480px
     430: {
       slidesPerView: 1.5,
     },
@@ -125,10 +122,18 @@ const body = document.querySelector("body");
 const overlay = document.querySelector(".overlay");
 const signUp = document.querySelector(".action__sign-up");
 const menuItems = document.querySelectorAll(".menu__item");
+const gridLink = document.querySelectorAll(".grid__item-link > a");
+const gridItem = document.querySelectorAll(".grid__item-link");
 const menuItemHeight =
   document.querySelector(".menu__item").clientHeight * menuItems.length +
   (35 * menuItems.length + 100);
-
+overlay.addEventListener("click", () => {
+    menu.classList.remove("active");
+    burger.classList.remove("active-burger");
+    body.classList.remove("locked");
+    overlay.classList.remove("active");
+    signUp.classList.remove("active");
+});
 burger.addEventListener("click", () => {
   if (!menu.classList.contains("active")) {
     menu.classList.add("active");
@@ -157,8 +162,7 @@ window.addEventListener("resize", () => {
     signUp.style.top = menuItemHeight + "px";
   }
 });
-const gridLink = document.querySelectorAll(".grid__item-link > a");
-const gridItem = document.querySelectorAll(".grid__item-link");
+
 // Centr menu for more items
 window.addEventListener("DOMContentLoaded", () => {
   if (window.innerWidth < 768) {
@@ -174,14 +178,7 @@ window.addEventListener("DOMContentLoaded", () => {
       menu.style.justifyContent = "center";
     }
   }
-});
-
-
-
-//  Check if is ist tablet mobile or desktop
-
-window.addEventListener("DOMContentLoaded", () => {
- const ua = navigator.userAgent;
+  const ua = navigator.userAgent;
   if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(ua)) {
     gridLink.forEach((element) => {
       element.style.visibility = "visible";
@@ -206,7 +203,34 @@ window.addEventListener("DOMContentLoaded", () => {
     });
   }
   return;
-})
+});
 
+//  Check if is ist tablet mobile or desktop
 
-
+window.addEventListener("DOMContentLoaded", () => {
+  const ua = navigator.userAgent;
+  if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(ua)) {
+    gridLink.forEach((element) => {
+      element.style.visibility = "visible";
+      element.style.opacity = 1;
+    });
+    gridItem.forEach((element) => {
+      element.style.background =
+        "linear-gradient(0deg, rgba(0, 0, 0, 0.33),rgba(0, 0, 0, 0.33))";
+    });
+  } else if (
+    /Mobile|Android|iP(hone|od)|IEMobile|BlackBerry|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/.test(
+      ua
+    )
+  ) {
+    gridItem.forEach((element) => {
+      element.style.background =
+        "linear-gradient(0deg, rgba(0, 0, 0, 0.33),rgba(0, 0, 0, 0.33))";
+    });
+    gridLink.forEach((element) => {
+      element.style.visibility = "visible";
+      element.style.opacity = 1;
+    });
+  }
+  return;
+});

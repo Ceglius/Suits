@@ -1,0 +1,117 @@
+@use "../abstract/vars" as *;
+@use "../abstract/mixins" as *;
+/*
+   ==== Discount ====
+*/
+.discount {
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+
+    @media ($min: $breakpoint480) {
+      width: 90%;
+      margin: 0 auto;
+    }
+    @media ($min: $breakpoint768) {
+      width: 100%;
+      flex-direction: row;
+    }
+  }
+
+  &__img {
+    @media ($min: $breakpoint320) {
+      height: 18.75rem;
+    }
+    @media ($min: $breakpoint768) {
+      height: 100%;
+    }
+
+    img {
+      object-fit: cover;
+      height: 100%;
+    }
+  }
+
+  &__text {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+
+    padding: 1.875rem;
+    background-color: var(--dark-blue-co);
+    color: var(--white-co);
+
+    @media ($min: $breakpoint992) {
+      padding: 0 109px;
+    }
+
+    h1 {
+      max-width: 27.25rem;
+      font-style: normal;
+      font-weight: 700;
+      font-size: 1.5rem;
+      line-height: 1.5;
+      letter-spacing: 0.02em;
+
+      @media ($min: $breakpoint320) {
+        font-size: 2.125rem;
+      }
+    }
+
+    p {
+      font-weight: 400;
+      font-size: 1.25rem;
+      line-height: 100%;
+      margin: 1.25rem 0;
+    }
+  }
+}
+
+.form {
+  width: 100%;
+
+  @media ($min: $breakpoint992) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  input[type="email"] {
+    width: 100%;
+    height: 3.75rem;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 100%;
+    border-radius: 0.5rem;
+    padding-left: 1.5rem;
+    margin-right: 1.25rem;
+    outline: none;
+    border: 2px solid transparent;
+
+    &:focus::placeholder {
+      color: transparent;
+    }
+
+    &:focus:valid {
+      border: 3px solid green;
+    }
+
+    &:focus:invalid {
+      border: 3px solid var(--red-co);
+    }
+  }
+
+  button {
+    margin-top: 1.25rem;
+    color: white;
+    width: 100%;
+    height: 60px;
+    background-color: #232a40;
+    border-radius: 8px;
+
+    @media ($min: $breakpoint992) {
+      width: 6.25rem;
+      margin-top: 0;
+    }
+  }
+}
