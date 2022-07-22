@@ -15,6 +15,7 @@
     @media ($min: $breakpoint768) {
       width: 100%;
       flex-direction: row;
+      
     }
   }
 
@@ -24,6 +25,10 @@
     }
     @media ($min: $breakpoint768) {
       height: 100%;
+    }
+
+    @media ($min: $breakpoint992) {
+      flex: 41%;
     }
 
     img {
@@ -44,6 +49,7 @@
 
     @media ($min: $breakpoint992) {
       padding: 0 109px;
+      flex-basis: 60%;
     }
 
     h1 {
@@ -87,18 +93,6 @@
     margin-right: 1.25rem;
     outline: none;
     border: 2px solid transparent;
-
-    &:focus::placeholder {
-      color: transparent;
-    }
-
-    &:focus:valid {
-      border: 3px solid green;
-    }
-
-    &:focus:invalid {
-      border: 3px solid var(--red-co);
-    }
   }
 
   button {

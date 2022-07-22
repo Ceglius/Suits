@@ -1,7 +1,66 @@
 @use "../abstract/vars" as *;
-/*
-  ==== Footer ====
-*/
-.footer {
+@use "../abstract/mixins" as *;
 
+/*
+   ==== Footer ====
+*/
+
+.footer {
+    background-color: var(--dark-blue-co);
+  &__wrapper {
+  }
+
+  &__grid {
+  }
+
+  &__intro {
+  }
+
+  &__logo {
+  }
+
+  &__text {
+  }
+
+  &__find-us {
+  }
+
+  &__links {
+  }
+
+  &__links-list {
+  }
+
+  &__links-item {
+  }
+
+  &__copyright {
+  }
+}
+
+.find-us {
+  &__heading {
+  }
+
+  &__list {
+  }
+
+  &__item {
+  }
+
+  &__link {
+  }
+}
+.item-links {
+  &__heading {
+  }
+
+  &__list {
+  }
+
+  &__item {
+  }
+
+  &__link {
+  }
 }

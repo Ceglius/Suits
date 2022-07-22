@@ -35,7 +35,7 @@ const promo = new Swiper(".promo__slider", {
   loop: true,
   initialSlide: 2,
   grabCursor: true,
-  centeredSlides: false,
+  centeredSlides: true,
   spaceBetween: 20,
   pagination: {
     el: ".promo-pagination",
@@ -127,12 +127,20 @@ const gridItem = document.querySelectorAll(".grid__item-link");
 const menuItemHeight =
   document.querySelector(".menu__item").clientHeight * menuItems.length +
   (35 * menuItems.length + 100);
+
+  const arrow = document.querySelectorAll(".footer-links__arrow > i");
+
+  arrow.forEach((el) => {
+    el.addEventListener("click", () => {
+      el.classList.toggle("active")
+    })
+  });
 overlay.addEventListener("click", () => {
-    menu.classList.remove("active");
-    burger.classList.remove("active-burger");
-    body.classList.remove("locked");
-    overlay.classList.remove("active");
-    signUp.classList.remove("active");
+  menu.classList.remove("active");
+  burger.classList.remove("active-burger");
+  body.classList.remove("locked");
+  overlay.classList.remove("active");
+  signUp.classList.remove("active");
 });
 burger.addEventListener("click", () => {
   if (!menu.classList.contains("active")) {
